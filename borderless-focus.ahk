@@ -7,10 +7,7 @@ global dpiScale := A_ScreenDPI / 96
 global activeWindow := ""
 
 #B::ToggleBorder
-
-try {
-    HideShowTaskbar(false)
-}
+HideShowTaskbar(false)
 
 ToggleBorder(*) {
     global isBorderActive, borderGuis, activeWindow
@@ -21,9 +18,7 @@ ToggleBorder(*) {
             borderGui.Destroy()
         borderGuis := []
         isBorderActive := false
-        try {
-            HideShowTaskbar(false)
-        }
+        HideShowTaskbar(false)
         if (activeWindow != "") {
             AppVol(0)
             WinMinimize(activeWindow)
@@ -50,15 +45,19 @@ ToggleBorder(*) {
         monWidth := GetMonitorResolution().width
         monHeight := GetMonitorResolution().height
 
-        borderGuis.Push(CreateBorderGui(x, 0, Round(width/dpiScale), Round(y/dpiScale)))  ; Top
-        borderGuis.Push(CreateBorderGui(x, y+height, Round(width/dpiScale), Round((monHeight-(y+height))/dpiScale)))  ; Bottom
-        borderGuis.Push(CreateBorderGui(0, 0, Round(x/dpiScale), monHeight))  ; Left
-        borderGuis.Push(CreateBorderGui(x + width, 0, Round(((monWidth-(x+width))/dpiScale)), monHeight))  ; Right
+        if (y > 0)
+        {
+            borderGuis.Push(CreateBorderGui(x, 0, Round(width/dpiScale), Round(y/dpiScale)))  ; Top
+            borderGuis.Push(CreateBorderGui(x, y+height, Round(width/dpiScale), Round((monHeight-(y+height))/dpiScale)))  ; Bottom
+        }
+        if (x > 0)
+        {
+            borderGuis.Push(CreateBorderGui(0, 0, Round(x/dpiScale), monHeight))  ; Left
+            borderGuis.Push(CreateBorderGui(x + width, 0, Round(((monWidth-(x+width))/dpiScale)), monHeight))  ; Right
+        }
 
         isBorderActive := true
-        try {
-            HideShowTaskbar(true)
-        }
+        HideShowTaskbar(true)
     }
 }
 
@@ -97,10 +96,15 @@ GetWindowRectDPI(winTitle) {
 }
 
 HideShowTaskbar(shouldHide) {
-    if (shouldHide)
-        WinHide("ahk_class Shell_TrayWnd")
-    else
-        WinShow("ahk_class Shell_TrayWnd")
+    if (shouldHide) {
+        try {
+            WinHide("ahk_class Shell_TrayWnd")
+        }
+    } else {
+        try {
+            WinShow("ahk_class Shell_TrayWnd")
+        }
+    }
 }
 
 AppVol(Target := "A", Level := 0) {
