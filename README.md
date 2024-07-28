@@ -26,6 +26,20 @@ Borderless Focus is especially useful for users with 32:9 super ultrawide monito
 2. Download the `borderless-focus.ahk` script from this repository.
 3. Double-click the script to run it.
 
+## How to Use
+
+1. Launch your game in borderless windowed mode (use 3440x1440 for 21:9 on 32:9 monitors).
+2. Press `Windows + B` to toggle Borderless Focus on/off.
+3. When activated:
+   - Black borders will appear around your game window (perfect for 21:9 on 32:9)
+   - The taskbar will be hidden
+   - Game audio will be unmuted
+4. When deactivated:
+   - Borders will be removed
+   - The taskbar will reappear
+   - Game audio will be muted
+   - The game window will be minimized
+
 ## Setting Up Custom 21:9 Resolution on 32:9 Monitors
 
 To enable a custom 21:9 resolution (3440x1440) on your 32:9 monitor:
@@ -51,20 +65,6 @@ For the best experience with borderless windowed games, especially on ultrawide 
 5. Apply the changes
 
 This setting ensures that G-SYNC works properly with borderless windowed games, providing smooth, tear-free gameplay across your entire display.
-
-## How to Use
-
-1. Launch your game in borderless windowed mode (use 3440x1440 for 21:9 on 32:9 monitors).
-2. Press `Windows + B` to toggle Borderless Focus on/off.
-3. When activated:
-   - Black borders will appear around your game window (perfect for 21:9 on 32:9)
-   - The taskbar will be hidden
-   - Game audio will be unmuted
-4. When deactivated:
-   - Borders will be removed
-   - The taskbar will reappear
-   - Game audio will be muted
-   - The game window will be minimized
 
 ## Notes
 
