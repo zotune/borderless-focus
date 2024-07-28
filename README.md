@@ -26,6 +26,20 @@ Borderless Focus is especially useful for users with 32:9 super ultrawide monito
 2. Download the `borderless-focus.ahk` script from this repository.
 3. Double-click the script to run it.
 
+## Setting Up Custom 21:9 Resolution on 32:9 Monitors
+
+To enable a custom 21:9 resolution (3440x1440) on your 32:9 monitor:
+
+1. Press Windows key + R, type "regedit", and press Enter
+2. Use "Edit - Find..." and search for "NV_Modes" key
+4. Add the following to the end of the existing value: "; 3440x1440x8,16,32,64=1F"
+5. Save and exit the Registry Editor
+6. Restart your computer or reload the graphics driver
+
+Note: You have to do this every time you upgrade your driver
+
+Now you can set your game to 3440x1440 windowed mode and enjoy 240Hz refresh rate.
+
 ## Important: Enable G-SYNC for Windowed and Full Screen Mode
 
 For the best experience with borderless windowed games, especially on ultrawide monitors, it's crucial to enable G-SYNC for both windowed and full screen modes:
@@ -40,7 +54,7 @@ This setting ensures that G-SYNC works properly with borderless windowed games, 
 
 ## How to Use
 
-1. Launch your game in borderless windowed mode.
+1. Launch your game in borderless windowed mode (use 3440x1440 for 21:9 on 32:9 monitors).
 2. Press `Windows + B` to toggle Borderless Focus on/off.
 3. When activated:
    - Black borders will appear around your game window (perfect for 21:9 on 32:9)
@@ -56,7 +70,7 @@ This setting ensures that G-SYNC works properly with borderless windowed games, 
 
 - Ensure your game is the active window when toggling Borderless Focus.
 - If you encounter any issues with audio control, check that the script has the necessary permissions to interact with your audio devices.
-- For 32:9 monitor users: Adjust your game's resolution to 21:9 (e.g., 3440x1440) for the best results.
+- For 32:9 monitor users: Use the custom 3440x1440 resolution for the best 21:9 experience.
 
 ## Troubleshooting
 
@@ -65,4 +79,5 @@ If you encounter any issues:
 2. Check that your game is in true borderless windowed mode, not fullscreen or regular windowed mode.
 3. Run the script as administrator if you're having trouble with taskbar or audio controls.
 4. Verify that G-SYNC is enabled for both windowed and full screen mode in NVIDIA Control Panel.
-5. For ultrawide monitors: Make sure your game supports 21:9 aspect ratio.
+5. For ultrawide monitors: Make sure you've set up the custom 21:9 resolution as described above.
+6. If the custom resolution doesn't appear, try updating your GPU drivers or using a custom resolution utility.
