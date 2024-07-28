@@ -34,9 +34,7 @@ ToggleBorder(*) {
         ; Minimize the active window
         if (activeWindow != "") {
             ;Mute the application
-            try {
-                AppVol(0)
-            }
+            AppVol(0)
             WinMinimize(activeWindow)
             
             activeWindow := ""
@@ -51,9 +49,7 @@ ToggleBorder(*) {
         activeWindow := WinGetID("A")
 
         ; Unmute the application
-        try {
-            AppVol(100)
-        }
+        AppVol(100)
 
         ; Get window position and size using DPI-aware function
         rect := GetWindowRectDPI("A")
@@ -153,7 +149,7 @@ AppVol(Target := "A", Level := 0) {
         ObjRelease(IAudioSessionControl)
         ComCall(14, IAudioSessionControl2, "UInt*", &pid := 0)
         ; msgbox(ProcessGetName(pid)`npid`nappName)
-        if (ProcessGetName(pid) != appName) {
+        if (pid = 0) || (ProcessGetName(pid) != appName) {
             continue
         }
         ISimpleAudioVolume := ComObjQuery(IAudioSessionControl2, "{87CE5498-68D6-44E5-9215-6DA47EF883D8}")
@@ -173,9 +169,6 @@ AppVol(Target := "A", Level := 0) {
             }
         }
         ObjRelease(ISimpleAudioVolume.Ptr)
-        if (ProcessGetName(pid) = appName) {
-            break
-        }
     }
     return (IsSet(levelOld) ? Round(levelOld * 100) : -1)
 }
