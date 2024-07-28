@@ -1,21 +1,15 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
-; Global variables
 global isBorderActive := false
 global borderGuis := []
-global dpiScale := A_ScreenDPI / 96  ; Calculate DPI scale dynamically
+global dpiScale := A_ScreenDPI / 96
 global activeWindow := ""
 
-; Create the tray menu
-A_TrayMenu.Add("Toggle Border", ToggleBorder)
-A_TrayMenu.Add("Exit", (*) => ExitApp())
-
-; Hotkey to toggle border (Windows + B)
 #B::ToggleBorder
 
 try {
-    HideShowTaskbar(false)  ; Show taskbar
+    HideShowTaskbar(false)
 }
 
 ToggleBorder(*) {
@@ -28,30 +22,21 @@ ToggleBorder(*) {
         borderGuis := []
         isBorderActive := false
         try {
-            HideShowTaskbar(false)  ; Show taskbar
+            HideShowTaskbar(false)
         }
-        
-        ; Minimize the active window
         if (activeWindow != "") {
-            ;Mute the application
             AppVol(0)
             WinMinimize(activeWindow)
             
             activeWindow := ""
         }
     } else {
-        ; Apply borders
         if !WinExist("A") {
             return
         }
-
-        ; Store the active window
         activeWindow := WinGetID("A")
-
-        ; Unmute the application
         AppVol(100)
 
-        ; Get window position and size using DPI-aware function
         rect := GetWindowRectDPI("A")
         x := rect.left
         y := rect.top
@@ -65,7 +50,6 @@ ToggleBorder(*) {
         monWidth := GetMonitorResolution().width
         monHeight := GetMonitorResolution().height
 
-        ; Create border GUIs
         borderGuis.Push(CreateBorderGui(x, 0, Round(width/dpiScale), Round(y/dpiScale)))  ; Top
         borderGuis.Push(CreateBorderGui(x, y+height, Round(width/dpiScale), Round((monHeight-(y+height))/dpiScale)))  ; Bottom
         borderGuis.Push(CreateBorderGui(0, 0, Round(x/dpiScale), monHeight))  ; Left
@@ -73,16 +57,16 @@ ToggleBorder(*) {
 
         isBorderActive := true
         try {
-            HideShowTaskbar(true)  ; Hide taskbar
+            HideShowTaskbar(true)
         }
     }
 }
 
 CreateBorderGui(x, y, w, h) {
     newGui := Gui("+AlwaysOnTop -Caption +ToolWindow +E0x20")
-    newGui.BackColor := "Black"  ; Set to black for visibility
+    newGui.BackColor := "Black"
     newGui.Show(Format("x{1} y{2} w{3} h{4} NoActivate", x, y, w, h))
-    WinSetTransparent(255, newGui)  ; Make it fully opaque
+    WinSetTransparent(255, newGui)
     return newGui
 }
 
@@ -101,7 +85,7 @@ GetWindowRectDPI(winTitle) {
     rect := Buffer(16, 0)
     DllCall("dwmapi\DwmGetWindowAttribute"
         , "Ptr", hWnd
-        , "UInt", 9  ; DWMWA_EXTENDED_FRAME_BOUNDS
+        , "UInt", 9
         , "Ptr", rect
         , "UInt", 16
         , "Int")
