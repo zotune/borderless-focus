@@ -132,7 +132,6 @@ AppVol(Target := "A", Level := 0) {
         IAudioSessionControl2 := ComObjQuery(IAudioSessionControl, "{BFB7FF88-7239-4FC9-8FA2-07C950BE9C6D}")
         ObjRelease(IAudioSessionControl)
         ComCall(14, IAudioSessionControl2, "UInt*", &pid := 0)
-        ; msgbox(ProcessGetName(pid)`npid`nappName)
         if (pid = 0) || (ProcessGetName(pid) != appName) {
             continue
         }
