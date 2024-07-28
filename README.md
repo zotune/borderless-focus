@@ -75,3 +75,8 @@ If you encounter any issues:
 4. Verify that G-SYNC is enabled for both windowed and full screen mode in NVIDIA Control Panel.
 5. For ultrawide monitors: Make sure you've set up the custom 21:9 resolution as described above.
 6. If the custom resolution doesn't appear, try updating your GPU drivers or using a custom resolution utility.
+
+## Uses the following binaries/modules
+* [AppVol.ahk](https://gist.github.com/anonymous1184/b251cd8407a379d4965791585887cfce) by **anonymous1184**
+
+<a href="https://www.buymeacoffee.com/adore" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
