@@ -14,12 +14,6 @@ Enhance your gaming experience with custom borders, taskbar hiding, and smart au
 
 Borderless Focus is especially useful for users with 32:9 super ultrawide monitors who want to play games in 21:9 aspect ratio. It creates a perfect centered 21:9 viewing area with black borders on the sides, giving you the ideal gaming experience without the need for manual resizing or dealing with stretched visuals.
 
-## Requirements
-
-- AutoHotkey v2.0
-- NVIDIA graphics card with G-SYNC support (for optimal performance)
-- Works great with 32:9 super ultrawide monitors!
-
 ## Installation
 
 1. Install AutoHotkey v2.0 from the [official website](https://www.autohotkey.com/).
