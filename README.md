@@ -39,9 +39,9 @@ Enhance your gaming experience with custom borders, taskbar hiding, and smart au
 For the best experience with borderless windowed games, it's crucial to enable G-SYNC for both windowed and full screen modes:
 
 1. Open NVIDIA Control Panel
-2. Navigate to "Set up G-SYNC" in the left menu
-3. Check the box for "Enable G-SYNC, G-SYNC Compatible"
-4. Select "Enable for windowed and full screen mode"
+2. Navigate to `Set up G-SYNC` in the left menu
+3. Check the box for `Enable G-SYNC, G-SYNC Compatible`
+4. Select `Enable for windowed and full screen mode`
 5. Apply the changes
 
 This setting ensures that G-SYNC works properly with borderless windowed games, providing smooth, tear-free gameplay.
