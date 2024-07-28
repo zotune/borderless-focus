@@ -13,7 +13,6 @@ ToggleBorder(*) {
     global isBorderActive, borderGuis, activeWindow
 
     if (isBorderActive) {
-        ; Remove borders
         for borderGui in borderGuis
             borderGui.Destroy()
         borderGuis := []
