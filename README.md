@@ -35,9 +35,9 @@ Enhance your gaming experience with custom borders, taskbar hiding, and smart au
 
 To enable a custom 21:9 resolution (3440x1440) on your 32:9 monitor:
 
-1. Press Windows key + R, type "regedit", and press Enter
+1. Press Windows key + R, type `regedit`, and press Enter
 2. Use "Edit - Find..." and search for "NV_Modes" key
-4. Add the following to the end of the existing value: "; 3440x1440x8,16,32,64=1F"
+4. Add the following to the end of the existing value: `; 3440x1440x8,16,32,64=1F`
 5. Save and exit the Registry Editor
 6. Restart your computer
 
