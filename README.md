@@ -1,6 +1,6 @@
 # Borderless Focus
 
-Enhance your gaming experience with custom borders, taskbar hiding, and smart audio management for borderless windowed games. Perfect for playing 21:9 games on 32:9 super ultrawide monitors!
+Enhance your gaming experience with custom borders, taskbar hiding, and smart audio management for borderless windowed games. Especially useful for users with 32:9 super ultrawide monitors who want to play games in 21:9 aspect ratio. It creates a perfect centered 21:9 viewing area with black borders on the sides, giving you the ideal gaming experience without the need for manual resizing or dealing with stretched visuals.
 
 ## Key Features
 
@@ -10,10 +10,6 @@ Enhance your gaming experience with custom borders, taskbar hiding, and smart au
 - Mute/unmute game audio automatically
 - Minimize games and mute them when toggled off
 - Easy toggle with Windows + B hotkey
-
-## Ultrawide Monitor Support
-
-Borderless Focus is especially useful for users with 32:9 super ultrawide monitors who want to play games in 21:9 aspect ratio. It creates a perfect centered 21:9 viewing area with black borders on the sides, giving you the ideal gaming experience without the need for manual resizing or dealing with stretched visuals.
 
 ## Installation
 
