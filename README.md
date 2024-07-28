@@ -34,9 +34,9 @@ To enable a custom 21:9 resolution (3440x1440) on your 32:9 monitor:
 2. Use "Edit - Find..." and search for "NV_Modes" key
 4. Add the following to the end of the existing value: "; 3440x1440x8,16,32,64=1F"
 5. Save and exit the Registry Editor
-6. Restart your computer or reload the graphics driver
+6. Restart your computer
 
-Note: You have to do this every time you upgrade your driver
+Note: You have to redo this upgrading your NVIDIA driver (no need to restart however)
 
 Now you can set your game to 3440x1440 windowed mode and enjoy 240Hz refresh rate.
 
