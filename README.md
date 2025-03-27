@@ -43,6 +43,13 @@ To enable a custom 21:9 resolution (3440x1440) on your 32:9 monitor:
 
 Note: You have to redo this upgrading your NVIDIA driver (no need to restart however)
 
+To override scaling settings you also need to go to "NVIDIA Control Panel - Adjust desktop size and position" and set the following settings:
+1. Select a scaling mode: "Aspect ratio"
+2. Perform scaling on: "GPU"
+3. Override the scaling mode set by games and programs: "Checked"
+
+![image](https://github.com/user-attachments/assets/1515b006-b124-4bb8-ac14-b95c5898c66e)
+
 Now you can set your game to 3440x1440 windowed mode and enjoy 240Hz refresh rate.
 
 ## Important: Enable G-SYNC for Windowed and Full Screen Mode
